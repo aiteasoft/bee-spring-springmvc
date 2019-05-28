@@ -6,7 +6,7 @@ bee + spring + springmvc
 Fast development is not a patent of PHP and Rails, Java also can do it.  
 Using Bee+Spring+SpringMVC combination, the development speed is fast and the coding is less.  
 It can not only save software development time, but also save software development cost.  
-#### The development speed and cost are not inferior to PHP and Rails.
+**The development speed and cost are not inferior to PHP and Rails**.
 
 **Bee** is an easy and high efficiency ORM framework.    
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
