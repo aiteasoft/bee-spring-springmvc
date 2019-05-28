@@ -5,7 +5,8 @@ Bee+Spring+SpringMVC
 ### 更快的开发Java Web的新组合：Bee+Spring+SpringMVC  
 开发速度快并不是PHP和Rails的专利，Java也可以。    
 发现Hiberante（MyBatis）+Spring+SpringMVC的开发速度不够快，要编写的代码比较多。    
-究其原因，是因为编码复杂度是O(n)。使用Bee+Spring+SpringMVC组合,开发速度快、编码少，    
+究其原因，是因为编码复杂度是O(n)。    
+**使用Bee+Spring+SpringMVC组合,开发速度快、编码少**，    
 不但可以节约软件开发时间，还可以节省软件开发成本；开发速度和开发成本都不比PHP和Rails差。    
 这一新组合编码具有省时/优雅、简易、自动(Timesaving/Tasteful, Easy, Automatic) 的Tea风格特征。    
 
