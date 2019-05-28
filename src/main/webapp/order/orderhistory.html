@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- /* -->
+<!--  * Copyright 2016-2019 the original author.All rights reserved. -->
+<!--  * Kingstar(aiteasoft@163.com) -->
+<!--  * The license,see the LICENSE file. -->
+<!--  */ -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Basic SUID Application</title>
+<style type="text/css">
+<!--
+.STYLE7 {color: #FF0000}
+-->
+</style>
+	<link rel="stylesheet" type="text/css" href="../css/je/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../css/je/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../css/je/themes/color.css">
+	<link rel="stylesheet" type="text/css" href="../css/je/themes/demo.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jqeEx.js"></script>
+	<script type="text/javascript" src="../js/js-ex2.js"></script>
+</head>
+<body>
+<br>
+  <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="STYLE7">(Bee+Spring+SpringMVC+jQuery+h5)</span></h2>
+<br>
+<div align="center">
+	<table align="center" id="dg" title="Data List" class="easyui-datagrid" style="width:1150px;height:600px"
+			url="../orderhistory/list"
+			toolbar="#toolbar"  fitColumns="true" pageSize=20 
+			data-options="height:'auto',singleSelect:false,collapsible:true,
+				method:'get',pagination:true,rownumbers:true"
+			>
+		<thead>
+			<tr>
+			    <th field="ck" checkbox="true"></th>
+                 <th field="id"   hidden="true"  width="50">ID</th>
+                 <th field="name"   width="50">名称</th>
+                 <th field="orderNo"   width="50">订单号</th>
+                 <th field="seqNO"   width="50">序列号</th>
+                 <th field="num"   width="50">金额</th>
+                 <th field="numFlag"   width="50">收入/支出</th>
+                 <th field="type"   width="50">支付类型</th>
+                 <th field="detail"   width="50">详情</th>
+                 <th field="datetime"   width="95" formatter="formatDateTime">日期</th>
+                 <th field="remark"   width="50">备注</th>
+			</tr>
+		</thead>
+	</table>
+	
+</div>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add()">New</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">Edit</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="del()">Delete</a>
+	
+	    <span>name:</span>
+	    <input id="name" style="line-height:26px;border:1px solid #ccc">
+	    <a href="#" class="easyui-linkbutton" iconCls="icon-search"  plain="true" onclick="find()">Search</a>
+	 </div>
+	
+	<div id="dlg" class="easyui-dialog" style="width:800px;height:380px;" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+	 <div style="padding:20px 20px 40px 80px;">
+		<form id="form1" method="post" novalidate accept-charset="UTF-8">
+			    <input type="hidden" id="id" name="id"/>
+			     <div style="margin-bottom:10px">
+				    <input name="name" class="easyui-textbox" required="true" label="名称" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="orderNo" class="easyui-textbox" required="true" label="订单号" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="seqNO" class="easyui-textbox" required="true" label="序列号" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="num" class="easyui-textbox" required="true" label="金额" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="numFlag" class="easyui-textbox" required="true" label="收入/支出" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="type" class="easyui-textbox" required="true" label="支付类型" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="detail" class="easyui-textbox" required="true" label="详情" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="datetime" class="easyui-textbox"  label="日期" style="width:100%">
+			     </div> 
+			     <div style="margin-bottom:10px">
+				    <input name="remark" class="easyui-textbox" required="true" label="备注" style="width:100%">
+			     </div> 
+		</form>
+	  </div>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" plain="true" onclick="save()" style="width:90px">Save</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" plain="true" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
+	</div>
+	<script type="text/javascript">
+	
+	/*
+	 * Copyright 2016-2019 the original author.All rights reserved.
+	 * Kingstar(aiteasoft@163.com)
+	 * The license,see the LICENSE file.
+	 */
+	
+	    //查询
+	    //同时删多条
+		var url;
+		function add(){ //打开一个对话框
+			$('#dlg').dialog('open').dialog('center').dialog('setTitle','New');
+			$('#form1').form('clear');
+			url = '../orderhistory/add';
+		}
+		
+		function edit(){
+			var rows=$("#dg").datagrid("getSelections");
+			if(rows.length>1) {
+				alert("Just can select one record at a time!");
+				return ;
+			}
+			var row = $('#dg').datagrid('getSelected');
+			if (row){
+				$('#dlg').dialog('open').dialog('center').dialog('setTitle','Edit');
+				$('#form1').form('load',row);
+				url = '../orderhistory/edit';
+			}
+		}
+
+		function save(){  //弹出框共用  同是一个Save提交按钮  add,edit
+			if(!$("#form1").form('validate')) return;
+// 			var data = $("#form1").serialize(); 
+			var data = $("#form1").serializeFilterNull();
+			   $.ajax({ 
+			    type:'post',  
+			    url:url, 
+			    data:data,  
+			    dataType:'json', 
+			    
+			    error:function(e){  
+                    console.log(e);  
+                    alert(e.status+"  :  "+e.statusText);
+                }, 
+			    success: function(result){
+				if (result.errorMsg){
+					$.messager.show({
+						title: 'Error',
+						msg: result.errorMsg
+					});
+				} else {
+					$.messager.show({
+						title: 'Successfully',
+						msg: 'Successfully!'
+					});
+					$('#dlg').dialog('close');
+					
+					$("#dg").datagrid("getPager").pagination('refresh', {
+	                        pageNumber : 1               //fix easyui bug
+	                 });
+	                    
+					$('#dg').datagrid('reload');
+				}
+			}
+		});
+		}
+		
+		function del(){
+// 			var row = $('#dg').datagrid('getSelected');
+			var row=$("#dg").datagrid("getSelections");
+			if (row){
+				$.messager.confirm('Confirm','Are you sure delete the record(s)?',function(r){
+					if (r){
+						var ids;
+						for(var i=0;i<row.length;i++){
+							if(i==0){
+								ids=(row[i].id);
+							}else{
+								ids+=","+row[i].id;
+							}
+						}
+						$.post('../orderhistory/del',{ids:ids},function(result){
+							if (result.errorMsg){
+								$.messager.show({	// show error message
+									title: 'Error',
+									msg: result.errorMsg
+								});
+							}else{
+								$('#dg').datagrid('reload');
+								$.messager.show({
+									title: 'delete',
+									msg: 'Delete successfully'
+								});	
+							}
+						},'json'); //json格式?
+					}
+				});
+			}
+		}
+		
+		function find(){
+           var page=1;
+           var pageSize=$("#dg").datagrid("getPager").data("pagination").options.pageSize;
+           
+   		var data={};
+		if($('#name').val()!=""){
+			data.name=$('#name').val();
+		}
+ 			$.post('../orderhistory/list?page='+page+'&rows='+pageSize,data,
+			     function(result){
+ 				
+			  	    if (result.errorMsg){
+				    	$.messager.show({	// show error message
+						  title: 'Error',
+						  msg: result.errorMsg
+					 });
+				    }
+				     
+			  	    if (result){
+	                    //将搜索结果显示在当前页面
+	                    $("#dg").datagrid("loadData", result.rows);
+	                    $("#dg").datagrid("getPager").pagination('refresh', {
+	                        total: result.total
+	                    });
+	                }
+			},'json'); 
+		}
+		
+		
+ 		$(function(){
+		 //获取页面分页对象
+	    var p = $('#dg').datagrid('getPager');
+	    if (p){
+	           $(p).pagination({
+	             onSelectPage:function (page,pageSize) {
+	        		var data={};
+	        		if($('#name').val()!=""){
+	        			data.name=$('#name').val();
+	        		}
+	        		
+	      			$.post('../orderhistory/list?page='+page+'&rows='+pageSize,data,
+	      				     function(result){
+	      					      if (result){
+// 	      		                    $("#dg").datagrid("loadData", result.rows);  //可以
+                                    $("#dg").datagrid("loadData", result);
+	      		                    $("#dg").datagrid("getPager").pagination('refresh', {
+	      		                        total: result.total
+	      	 	                        ,
+	      	 	                        pageNumber : page
+	      		                    });
+	      		                }
+	      				},'json'); 
+	              } 
+	           });
+	     }
+	 });
+	</script>
+</body>
+</html>
