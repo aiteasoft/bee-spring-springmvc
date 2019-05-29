@@ -1,5 +1,5 @@
 
-Bee+Spring+SpringMVC
+Bee + Spring + SpringMVC
 =========
 
 ### 更快的开发Java Web的新组合：Bee+Spring+SpringMVC  
