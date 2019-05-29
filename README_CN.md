@@ -10,6 +10,18 @@ Bee+Spring+SpringMVC
 不但可以节约软件开发时间，还可以节省软件开发成本；开发速度和开发成本都不比PHP和Rails差。    
 这一新组合编码具有省时/优雅、简易、自动(Timesaving/Tasteful, Easy, Automatic) 的Tea风格特征。    
 
+### 用Bee+Spring+SpringMVC+easyui,半个小时实现一个历史订单管理功能。  
+#### 请看以下截图：  
+
+<img src="JavaWeb-system-images/0.png" width="600">
+<img src="JavaWeb-system-images/1.png" width="600">
+<img src="JavaWeb-system-images/2.png" width="600">
+<img src="JavaWeb-system-images/3.png" width="600">
+<img src="JavaWeb-system-images/4.png" width="600">
+<img src="JavaWeb-system-images/5.png" width="600">
+<img src="JavaWeb-system-images/6.png" width="600">
+<img src="JavaWeb-system-images/7.png" width="600">
+
 
 ### Bee是一个 ORM框架,它的开发速度快，编码少,还很简单。    
 **Bee** 是一个具有省时/优雅、简易、自动( **Tea:** Timesaving/Tasteful, Easy, Automatic) 风格的ORM框架。  
@@ -35,19 +47,6 @@ Bee是一种更接近SQL语言思维的ORM框架，
 https://github.com/automvc/bee  
 **Bee在gitee** 的网址:  
 https://gitee.com/automvc/bee
-
-
-### 用Bee+Spring+SpringMVC+easyui,半个小时实现一个历史订单管理功能。  
-#### 请看以下截图：  
-
-<img src="JavaWeb-system-images/0.png" width="600">
-<img src="JavaWeb-system-images/1.png" width="600">
-<img src="JavaWeb-system-images/2.png" width="600">
-<img src="JavaWeb-system-images/3.png" width="600">
-<img src="JavaWeb-system-images/4.png" width="600">
-<img src="JavaWeb-system-images/5.png" width="600">
-<img src="JavaWeb-system-images/6.png" width="600">
-<img src="JavaWeb-system-images/7.png" width="600">
 
 
 #### 作者的电子邮箱email:    aiteasoft@126.com  
