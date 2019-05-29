@@ -8,6 +8,7 @@ Using Bee+Spring+SpringMVC combination, the development speed is fast and the co
 It can not only save software development time, but also save software development cost.  
 **The development speed and cost are not inferior to PHP and Rails**.  
 
+##  Rapid Application Development Demo:  
 ###  Bee+Spring+SpringMVC+easyui,develop a history order manage function in 30 minutes.  
 #### Pls see the following images：  
 
