@@ -38,7 +38,7 @@ https://gitee.com/automvc/bee
 
 
 ### 用Bee+Spring+SpringMVC+easyui,半个小时实现一个历史订单管理功能。请看以下截图：
-<img src="https://github.com/ZDfordream/Flutter-TianYue/blob/master/screenshot/screenshot1.png" width="800">
+<img src="https://github.com/aiteasoft/bee-spring-springmvc/blob/master/JavaWeb-system-images/0.png" width="600">
 
 
 #### 作者的电子邮箱email:    aiteasoft@126.com  
