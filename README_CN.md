@@ -10,6 +10,7 @@ Bee + Spring + SpringMVC
 不但可以节约软件开发时间，还可以节省软件开发成本；开发速度和开发成本都不比PHP和Rails差。    
 这一新组合编码具有省时/优雅、简易、自动(Timesaving/Tasteful, Easy, Automatic) 的Tea风格特征。    
 
+## 快速开发实例：  
 ### 用Bee+Spring+SpringMVC+easyui,半个小时实现一个历史订单管理功能。  
 #### 请看以下截图：  
 
