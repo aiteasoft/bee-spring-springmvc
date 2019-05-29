@@ -1,5 +1,5 @@
 
-bee + spring + springmvc
+Bee + Spring + SpringMVC
 =========
 
 ### Faster development of new combinations of Java Web：Bee+Spring+SpringMVC  
