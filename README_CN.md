@@ -40,6 +40,9 @@ https://gitee.com/automvc/bee
 ### 用Bee+Spring+SpringMVC+easyui,半个小时实现一个历史订单管理功能。  
 #### 请看以下截图：  
 
+<img src="bee-spring-springmvc/blob/master/JavaWeb-system-images/0.png" width="600">
+<img src="./bee-spring-springmvc/blob/master/JavaWeb-system-images/0.png" width="600">
+<img src="/bee-spring-springmvc/blob/master/JavaWeb-system-images/0.png" width="600">
 <img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/0.png" width="600">
 <img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/1.png" width="600">
 <img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/2.png" width="600">
