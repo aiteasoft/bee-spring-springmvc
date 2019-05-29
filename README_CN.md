@@ -41,16 +41,13 @@ https://gitee.com/automvc/bee
 #### 请看以下截图：  
 
 <img src="JavaWeb-system-images/0.png" width="600">
-<img src="./JavaWeb-system-images/0.png" width="600">
-<img src="/JavaWeb-system-images/0.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/0.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/1.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/2.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/3.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/4.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/5.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/6.png" width="600">
-<img src="../../../bee-spring-springmvc/blob/master/JavaWeb-system-images/7.png" width="600">
+<img src="JavaWeb-system-images/1.png" width="600">
+<img src="JavaWeb-system-images/2.png" width="600">
+<img src="JavaWeb-system-images/3.png" width="600">
+<img src="JavaWeb-system-images/4.png" width="600">
+<img src="JavaWeb-system-images/5.png" width="600">
+<img src="JavaWeb-system-images/6.png" width="600">
+<img src="JavaWeb-system-images/7.png" width="600">
 
 
 #### 作者的电子邮箱email:    aiteasoft@126.com  
