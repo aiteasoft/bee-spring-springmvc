@@ -4,6 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+<!--     ds1 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
@@ -16,11 +17,33 @@
 		<property name="maxPoolSize" value="20" />
 		<property name="maxIdleTime" value="1800" />
 	</bean>
+	
+	<bean id="ds2" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl"
+			value="jdbc:mysql://localhost:3306/bee?characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="" />
+		<property name="initialPoolSize" value="10" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxPoolSize" value="20" />
+		<property name="maxIdleTime" value="1800" />
+	</bean>
 
+<!-- 	<bean id="beeFactory" class="org.teasoft.honey.osql.core.BeeFactory">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean> -->
 
 	<bean id="beeFactory" class="org.teasoft.honey.osql.core.BeeFactory">
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="dataSourceMap">
+			<map>
+				<entry key="ds1" value-ref="dataSource" />
+				<entry key="ds2" value-ref="ds2" />
+			</map>
+		</property>
 	</bean>
+
 	<bean id="sessionFactory" class="org.teasoft.honey.osql.core.SessionFactory">
 		<property name="beeFactory" ref="beeFactory"></property>
 	</bean>
@@ -36,8 +59,6 @@
 	<bean id="objSQLRichServiceImpl" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
 	</bean>
 	
-
-
 	<!-- <import resource="spring-others.xml"></import> -->
 
 </beans>
