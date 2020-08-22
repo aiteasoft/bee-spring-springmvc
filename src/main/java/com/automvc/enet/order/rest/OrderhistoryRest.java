@@ -41,6 +41,7 @@ public class OrderhistoryRest {
 	  Result  result =new Result();
 	  try{
 		  String count=objSQLRichService.selectWithFun(orderhistory,FunctionType.COUNT,"*");
+//		  String count=20+"";
 		  List<Orderhistory> list=objSQLRichService.select(orderhistory, (page-1)*rows, rows);
 		  result.setRows(list);
 		  int total=count==null?0:Integer.parseInt(count);
