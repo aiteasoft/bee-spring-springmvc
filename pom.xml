@@ -15,6 +15,8 @@
 		<spring.version>4.3.21.RELEASE</spring.version>
 <!-- 		<jackson.version>2.5.3</jackson.version> -->
         <jackson.version>2.9.9</jackson.version>
+<!--         <bee.version>1.7.2</bee.version> -->
+        <bee.version>1.8-SNAPSHOT</bee.version>
 	</properties>
 
 	<dependencies>
@@ -100,13 +102,13 @@
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.4.2</version>
+			<version>${bee.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.4.23</version>
+			<version>${bee.version}</version>
 		</dependency>
 
 		<dependency>
