@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="beeSql" class="org.teasoft.honey.osql.core.SqlLib">
+	</bean>
+	
+	<bean id="suid" class="org.teasoft.honey.osql.core.ObjSQL">
+		<property name="beeSql" ref="beeSql"></property>
+	</bean>
+	<bean id="suidRich" class="org.teasoft.honey.osql.core.ObjSQLRich">
+	     <property name="beeSql" ref="beeSql"></property>
+	</bean>
+	
+	<bean id="preparedSql" class="org.teasoft.honey.osql.core.PreparedSqlLib">
+		<property name="beeSql" ref="beeSql"></property>
+	</bean>
+	
+	<bean id="callableSql" class="org.teasoft.honey.osql.core.CallableSqlLib"/>
+	
+	<bean id="moreTable" class="org.teasoft.honey.osql.core.MoreObjSQL">
+		<property name="beeSql" ref="beeSql"></property>
+	</bean>
+	
+	<bean id="mapSuid" class="org.teasoft.honey.osql.core.MapSuidImpl">
+		<property name="beeSql" ref="beeSql"></property>	
+	</bean>
+
+	<bean id="condition" class="org.teasoft.honey.osql.core.ConditionImpl" scope="prototype" />
+	<bean id="mapSql" class="org.teasoft.honey.osql.core.MapSqlImpl" scope="prototype" />
+
+	<bean id="objSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
+		<property name="suid" ref="suid"></property>
+	</bean>
+
+	<bean id="objSQLRichService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
+		<property name="suid" ref="suid"></property>
+		<property name="suidRich" ref="suidRich"></property>
+	</bean>
+	
+</beans>

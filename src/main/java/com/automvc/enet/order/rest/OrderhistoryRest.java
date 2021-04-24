@@ -8,17 +8,16 @@ package com.automvc.enet.order.rest;
 
 import java.util.List;
 
-import org.teasoft.bee.osql.BeeSQLException;
-import org.teasoft.bee.osql.FunctionType;
-import org.teasoft.bee.osql.service.ObjSQLRichService;
-import org.teasoft.bee.osql.service.ObjSQLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.teasoft.bee.osql.BeeSQLException;
+import org.teasoft.bee.osql.service.ObjSQLRichService;
+import org.teasoft.bee.osql.service.ObjSQLService;
 
-import com.automvc.enet.order.entity.Orderhistory;
 import com.automvc.common.jquery.Result;
+import com.automvc.enet.order.entity.Orderhistory;
 
 /**
  * @author AiTeaSoft.com
@@ -40,11 +39,9 @@ public class OrderhistoryRest {
 		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
 	  Result  result =new Result();
 	  try{
-		  String count=objSQLRichService.selectWithFun(orderhistory,FunctionType.COUNT,"*");
-//		  String count=20+"";
+		  int total=objSQLRichService.count(orderhistory);
 		  List<Orderhistory> list=objSQLRichService.select(orderhistory, (page-1)*rows, rows);
 		  result.setRows(list);
-		  int total=count==null?0:Integer.parseInt(count);
 		  result.setTotal(total);
 	  } catch (BeeSQLException e) {
 	      System.err.println(e.getMessage());

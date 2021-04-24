@@ -31,34 +31,23 @@
 		<property name="maxIdleTime" value="1800" />
 	</bean>
 
-<!-- 	<bean id="beeFactory" class="org.teasoft.honey.osql.core.BeeFactory">
-		<property name="dataSource" ref="dataSource"></property>
-	</bean> -->
-
 	<bean id="beeFactory" class="org.teasoft.honey.osql.core.BeeFactory">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- <bean id="beeFactory" class="org.teasoft.honey.osql.core.BeeFactory">
 		<property name="dataSourceMap">
 			<map>
 				<entry key="ds1" value-ref="dataSource" />
 				<entry key="ds2" value-ref="ds2" />
 			</map>
 		</property>
-	</bean>
+	</bean> -->
 
 	<bean id="sessionFactory" class="org.teasoft.honey.osql.core.SessionFactory">
 		<property name="beeFactory" ref="beeFactory"></property>
 	</bean>
-	<bean id="beeSql" class="org.teasoft.honey.osql.core.SqlLib">
-	</bean>
-	<bean id="suid" class="org.teasoft.honey.osql.core.ObjSQL">
-		<property name="beeSql" ref="beeSql"></property>
-	</bean>
-	<bean id="suidRich" class="org.teasoft.honey.osql.core.ObjSQLRich">
-	</bean>
-	<bean id="objSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
-	</bean>
-	<bean id="objSQLRichServiceImpl" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
-	</bean>
 	
-	<!-- <import resource="spring-others.xml"></import> -->
+	<import resource="beeContext.xml"></import>
 
 </beans>
