@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.teasoft.bee.osql.BeeSQLException;
-import org.teasoft.bee.osql.FunctionType;
 import org.teasoft.bee.osql.service.ObjSQLRichService;
 import org.teasoft.bee.osql.service.ObjSQLService;
+import org.teasoft.beex.util.CnNum;
 
 import com.automvc.common.jquery.Result;
 import com.automvc.enet.order.entity.Beeorders;
@@ -40,11 +40,11 @@ public class BeeordersRest {
 		 @RequestParam(value = "rows", defaultValue = "20", required = false) int rows) {	
 	  Result  result =new Result();
 	  try{
-//		  String count=objSQLRichService.selectWithFun(beeorders,FunctionType.COUNT,"*");
-		  String count=20+"";
+		  
+		  System.err.println(CnNum.tranToUpper(12345678L));
+		  int total=20;//test
 		  List<Beeorders> list=objSQLRichService.select(beeorders, (page-1)*rows, rows);
 		  result.setRows(list);
-		  int total=count==null?0:Integer.parseInt(count);
 		  result.setTotal(total);
 	  } catch (BeeSQLException e) {
 	      System.err.println(e.getMessage());
